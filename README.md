@@ -3,6 +3,7 @@ Boilerplate for create new projects base on:
 - NodeJS
 - Vuejs (https://vuejs.org)
 - Hapi (hapijs.com)
+- Json Web Token
 - Webpack (https://webpack.js.org/)
 - Scss 
 - Bulma (http://bulma.io/)
