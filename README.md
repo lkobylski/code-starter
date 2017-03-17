@@ -1,5 +1,5 @@
 ## Code - Starter  
-Bolierplate for create new projects base on:  
+Boilerplate for create new projects base on:  
 - NodeJS
 - Vuejs (https://vuejs.org)
 - Hapi (hapijs.com)
