@@ -1,0 +1,94 @@
+<v-layout>
+    <h1 class="title">Register</h1>
+    <div>
+        <form @submit.prevent="register(user)">
+            <div class="field">
+                <div class="label">
+                    <i class="fa fa-user fa-fw"></i> First name
+                </div>
+                <p class="control">
+                    <input
+                            v-model="user.firstName"
+                            type="text"
+                            placeholder="First name"
+                            class="input"
+                    >
+                </p>
+            </div>
+            <div class="field">
+
+                <div class="label">
+                    <i class="fa fa-user fa-fw"></i> Last name
+                </div>
+                <p class="control">
+
+                    <input
+                            v-model="user.lastName"
+                            type="text"
+                            placeholder="Last name"
+                            class="input"
+                    >
+                </p>
+
+            </div>
+            <div class="field">
+
+                <div class="label">
+                    <i class="fa fa-envelope fa-fw"></i> Email
+                </div>
+                <div class="control">
+
+                    <input
+                            v-model="user.email"
+                            type="email"
+                            placeholder="Email"
+                            class="input"
+                    >
+                </div>
+
+            </div>
+            <div class="field">
+
+                <div class="label">
+                    <i class="fa fa-lock fa-fw"></i> Password
+                </div>
+                <p class="control">
+                    <input
+                            v-model="user.password"
+                            type="password"
+                            placeholder="Password"
+                            class="input"
+                    >
+                </p>
+
+            </div>
+            <div class="field">
+
+                <div class="label">
+                    <i class="fa fa-lock fa-fw"></i> Confirm password
+                </div>
+                <p class="control">
+                    <input
+                            v-model="user.passwordConfirm"
+                            type="password"
+                            placeholder="Confirm password"
+                            class="input"
+                    >
+                </p>
+
+            </div>
+            <div class="field">
+                <p class="control">
+
+                    <button class="button is-primary">
+                        Register
+                    </button>
+                </p>
+            </div>
+        </form>
+        <div>
+            Already got an account?
+            <router-link :to="{ name: 'login.index' }">Login</router-link>
+        </div>
+    </div>
+</v-layout>

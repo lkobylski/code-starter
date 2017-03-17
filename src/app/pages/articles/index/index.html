@@ -1,0 +1,34 @@
+<v-layout>
+    <div class="columns">
+        <div class="column">
+            <h1 class="title">Articles</h1>
+            <div class="block is-clearfix">
+                <router-link
+                        :to="{ name: 'articles.create' }"
+                        class="button is-primary is-outlined is-pulled-right"
+                >New article</router-link>
+            </div>
+            <div class="block is-clearfix">
+                <div class="card is-info" v-for="article in articles">
+                    <div class="card-header-title">{{article.title}}</div>
+                    <div class="card-content">
+                        <div>
+                            {{article.content}}
+                            <br>
+                            <small><a>{{article.user.firstName}} {{article.user.lastName}}</a></small> -
+                            <small>{{moment(article.createdAt).format('D-M-YYYY')}}</small>
+                        </div>
+                    </div>
+                    <div class="card-footer" v-show="article.user && article.user._id == $store.state.account.id">
+                        <router-link
+                                :to="{ name: 'articles.edit', params: {id: article._id} }"
+                                class="card-footer-item is-primary"
+                        >Edit</router-link>
+
+                        <a class="card-footer-item is-danger" v-on:click.prevent="remove(article)">Remove</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</v-layout>

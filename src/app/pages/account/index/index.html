@@ -1,0 +1,24 @@
+<v-layout>
+    <div class="columns">
+        <div class="column">
+            <div class="title">User account</div>
+            <div>
+                <table class="is-success">
+                    <tr>
+                        <td>First name</td>
+                        <td>{{$store.state.account.firstName}}</td>
+                    </tr>
+                    <tr>
+                        <td>Last name</td>
+                        <td>{{$store.state.account.lastName}}</td>
+                    </tr>
+                    <tr>
+                        <td>E-mail</td>
+                        <td>{{$store.state.account.email}}</td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</v-layout>

@@ -1,0 +1,52 @@
+{
+  "name": "code-starter",
+  "version": "0.0.1",
+  "description": "HapiJs, NodeJS, Vue, Webpack",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "build": "webpack --config build/webpack.config.js --progress --profile --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "babel-preset-es2015-ie": "^6.7.0",
+    "boom": "^4.2.0",
+    "bulma": "^0.4.0",
+    "compass-mixins": "^0.12.10",
+    "crypto": "0.0.3",
+    "glob": "^7.1.1",
+    "handlebars": "^4.0.6",
+    "hapi": "^16.1.0",
+    "hapi-auth-jwt2": "^7.2.4",
+    "hoek": "^4.1.0",
+    "joi": "^10.2.2",
+    "jquery": "^3.1.1",
+    "jsonwebtoken": "^7.3.0",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.9.0",
+    "nodemon": "^1.11.0",
+    "path": "^0.12.7",
+    "sass-loader": "^6.0.3",
+    "vision": "^4.1.1",
+    "vue": "^2.2.4",
+    "vue-router": "^2.3.0",
+    "vuex": "^2.2.1",
+    "vuex-router-sync": "^4.1.2"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.7.7",
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.0",
+    "css-loader": "^0.27.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.0",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.14.1",
+    "vue-loader": "^11.1.4",
+    "vue-template-compiler": "^2.2.4",
+    "webpack": "^2.2.1"
+  }
+}

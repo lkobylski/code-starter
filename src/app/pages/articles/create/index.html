@@ -1,0 +1,40 @@
+<v-layout>
+    <div class="columns">
+        <div class="column">
+            <h1 class="title">New Article</h1>
+            <div class="content">
+                <div class="block is-clearfix">
+                    <router-link
+                            :to="{ name: 'articles.index' }"
+                            class="button is-primary is-outlined is-pulled-right"
+                    >
+                        Articles list
+
+                    </router-link>
+                </div>
+
+            </div>
+
+            <div class="content">
+                <form @submit.prevent="save(article)">
+                    <div class="field">
+                        <label class="label">Title</label>
+                        <input v-model="article.title" type="text" name="title" class="input"/>
+                    </div>
+                    <div class="field">
+                        <label class="label">Content</label>
+                        <textarea v-model="article.content" class="textarea" name="content"></textarea>
+                    </div>
+                    <div class="field">
+                        <p class="control">
+
+                            <button class="button is-primary" type="submit">
+                                Save
+                            </button>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</v-layout>

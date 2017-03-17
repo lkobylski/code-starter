@@ -1,0 +1,48 @@
+<div>
+    <section class="container">
+        <nav class="nav">
+            <div class="nav-left">
+                <span class="nav-item">
+                    <span class="is-info">CodeStrter</span>
+                </span>
+            </div>
+            <div class="nav-center">
+                <router-link
+                        :to="{ name: 'home.index' }"
+                        active-class="active"
+                        class="nav-item"
+                >
+                        Home
+
+                </router-link>
+
+                <router-link
+                        :to="{ name: 'articles.index' }"
+                        active-class="active"
+                        class="nav-item"
+                >
+                        Articles
+
+                </router-link>
+
+                <router-link
+                        :to="{ name: 'account.index' }"
+                        active-class="active"
+                        class="nav-item"
+                > Account
+
+                </router-link>
+            </div>
+            <div class="nav-right">
+                <a href="#" class="nav-item" @click.prevent="logout">
+                    <i class="fa fa-sign-out"></i>Logout
+                </a>
+            </div>
+        </nav>
+    </section>
+    <section class="section">
+        <div class="container">
+            <slot></slot>
+        </div>
+    </section>
+</div>
