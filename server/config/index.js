@@ -14,7 +14,7 @@ let resolvingConfig = function () {
         require('./env/' + process.env.NODE_ENV) || {}
     );
 
-    return _.merge(conf, (fs.existsSync('./config/env/local.js') && require('./env/local.js')) || {});
+    return _.merge(conf, (fs.existsSync(__dirname +'/env/local.js') && require('./env/local.js')) || {});
 };
 
 module.exports = resolvingConfig();
