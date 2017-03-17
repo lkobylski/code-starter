@@ -7,7 +7,7 @@ Boilerplate for create new projects base on:
 - Scss 
 - Bulma (http://bulma.io/)
 
-### Run
+### Install
 
 MongoDB is required.
 
@@ -31,7 +31,7 @@ module.exports = {
 ```
 npm install
 ```
-
+### Run
 ```
 npm run build
 ```  
