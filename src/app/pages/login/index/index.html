@@ -1,8 +1,8 @@
 <v-layout>
     <h1 class="title">Login</h1>
     <div>
-        <form @submit.prevent="register(user)">
-            <div class="field">
+        <v-form :model="user" @send="register" :error="error">
+            <div>
 
                 <div class="label">
                     <i class="fa fa-envelope fa-fw"></i> Email
@@ -41,7 +41,7 @@
                     </button>
                 </p>
             </div>
-        </form>
+        </v-form>
         <div>
             Don't have account?
             <router-link :to="{ name: 'register.index' }">Register</router-link>

@@ -17,6 +17,8 @@
     "bulma": "^0.4.0",
     "compass-mixins": "^0.12.10",
     "crypto": "0.0.3",
+    "file-loader": "^0.10.1",
+    "font-awesome": "^4.7.0",
     "glob": "^7.1.1",
     "handlebars": "^4.0.6",
     "hapi": "^16.1.0",
@@ -32,6 +34,7 @@
     "sass-loader": "^6.0.3",
     "vision": "^4.1.1",
     "vue": "^2.2.4",
+    "vue-bulma-card": "^1.0.2",
     "vue-router": "^2.3.0",
     "vuex": "^2.2.1",
     "vuex-router-sync": "^4.1.2"
@@ -45,6 +48,7 @@
     "node-sass": "^4.5.0",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.14.1",
+    "url-loader": "^0.5.8",
     "vue-loader": "^11.1.4",
     "vue-template-compiler": "^2.2.4",
     "webpack": "^2.2.1"

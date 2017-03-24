@@ -94,6 +94,19 @@ module.exports = {
                     fallback: "style-loader"
                 })
 
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+                loader: 'url-loader'
+            },
+            {
+                test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+                loader: 'url-loader',
+                query: {
+                    limit: 10000,
+                    name: '/../fonts/[name].[hash:7].[ext]'
+                   // name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
+                }
             }
         ]
     },

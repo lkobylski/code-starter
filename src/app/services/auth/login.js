@@ -18,14 +18,17 @@ const failed = (err) => {
 
 export default (user) => {
 
-     Vue.$http.post('/api/user/login', user)
-        .then((response) => {
-          success(response);
-        })
-        .catch((error) => {
-          failed(error);
-        });
+    return new Promise((resolve, reject) => {
+        Vue.$http.post('/api/user/login', user)
+            .then((response) => {
+                resolve(response);
+                success(response);
 
+            })
+            .catch((error) => {
+                reject(error);
+            });
+    });
     // if (!user.email || !user.password) {
     //     failed();
     // } else {

@@ -16,15 +16,18 @@
             </div>
 
             <div class="content">
-                <form @submit.prevent="save(article)">
-                    <div class="field">
+                <v-form :model="article" @send="save" :error="error">
+                    <form-field>
                         <label class="label">Title</label>
-                        <input v-model="article.title" type="text" name="title" class="input"/>
-                    </div>
-                    <div class="field">
+                        <input v-model="article.title" type="text" name="title" class="input">
+                    </form-field>
+
+                    <form-field>
                         <label class="label">Content</label>
                         <textarea v-model="article.content" class="textarea" name="content"></textarea>
-                    </div>
+                    </form-field>
+
+
                     <div class="field">
                         <p class="control">
 
@@ -33,7 +36,7 @@
                             </button>
                         </p>
                     </div>
-                </form>
+                </v-form>
             </div>
         </div>
     </div>

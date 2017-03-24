@@ -76,6 +76,19 @@ server.register(plugins, (err) => {
 
     server.route({
         method: 'GET',
+        path: '/fonts/{filename}',
+        config: {
+            auth: false,
+        },
+        handler: {
+            file: function (request) {
+                return __dirname + '/../public/fonts/' + request.params.filename;
+            }
+        }
+    });
+
+    server.route({
+        method: 'GET',
         path: '/css/{filename}',
         config: {
             auth: false,

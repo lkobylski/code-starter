@@ -104,6 +104,16 @@ router.beforeEach((to, from, next) => {
 VuexRouterSync.sync(store, router);
 Vue.router = router;
 
+
+/* ==============
+ * Vue Components
+ * ==============
+ */
+Vue.component('form-field', require('./app/components/form/field.vue'));
+Vue.component('v-form', require('./app/components/form/form.vue'));
+
+
+
 /* ============
  * jQuery
  * ============
