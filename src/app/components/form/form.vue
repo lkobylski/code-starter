@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="submit(model)" @hasError="onHasError">
+    <form @submit.prevent="submit(model)">
         <slot></slot>
         <div v-if="hasErrors" class="notification is-danger">{{showErrors}}</div>
     </form>
@@ -7,6 +7,7 @@
 
 <script>
     import slotMixin from './../../mixins/slot';
+    import formErrors from './../../mixins/formErrors';
     import FormError from './FormError';
 
 
@@ -22,23 +23,13 @@
         },
 
         mixins: [
-            slotMixin,
+            slotMixin
         ],
 
         methods: {
-            onHasError () {
-                console.log('Mam błąd AAAAAA');
-
-            },
-
-
 
             submit () {
                 this.$emit('send', this.model);
-            },
-
-            getErrorsForm (field) {
-                return "aaa";
             }
         },
 
@@ -55,15 +46,7 @@
             hasErrors() {
                 return !!this.error;
             },
-        },
-
-        created () {
-            this.fields = this.$children;
-            //this.fields[1].error = "TEST error";
-        },
-
-        mounted() {
-         // this.fields[0].error = "Test error";
         }
+
     }
 </script>

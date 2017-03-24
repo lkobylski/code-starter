@@ -1,5 +1,7 @@
 import articleService from 'services/article';
 import FormError from '../../../components/form/FormError';
+import formErrors from './../../../mixins/formErrors';
+
 
 export default {
 
@@ -13,12 +15,18 @@ export default {
         };
     },
 
+    mixins: [
+        formErrors,
+    ],
+
     methods: {
 
         save(article) {
+            this.errors = {};
+
             articleService.create(article)
                 .then(result => {
-                    this.error = null;
+                    this.errors = {};
                     this.$router.push({
                         name: 'articles.index',
                     });
@@ -26,9 +34,8 @@ export default {
                 .catch((err) => {
 
                     if(err.message && err.validation.keys.length){
-                        let error = new FormError(err.validation.keys[0], err.message);
-                        this.error = error;
-                        this.$emit('hasError');
+                        this.errors['title'] = new FormError(err.validation.keys[0], err.message);
+                        console.log(this.errors);
                     } else {
                         console.error(err);
                     }
