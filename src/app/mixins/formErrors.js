@@ -1,3 +1,5 @@
+import FormError from '../components/form/FormError';
+
 export default {
     data () {
         return {
@@ -7,17 +9,22 @@ export default {
 
     methods: {
         hasErrorFor(field) {
-            console.log(this.errors[field]);
+
             return this.errors[field] !== undefined
+                &&
+                this.errors[field]
+                &&
+                this.errors[field].constructor === FormError
                 ;
         },
 
         getErrorFor(field) {
+
             if (!this.hasErrorFor(field)) {
                 return null;
             }
 
-            return this.errors[field];
+            return this.errors[field].message;
         },
 
         hasErrors() {
@@ -30,7 +37,7 @@ export default {
 
         clearErrorsFor(field) {
             if (this.hasErrorFor(field)) {
-                this.errors[field] = [];
+                this.errors[field] = null;
             }
         },
     }

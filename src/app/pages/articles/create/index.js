@@ -18,7 +18,6 @@ export default {
     mixins: [
         formErrors,
     ],
-
     methods: {
 
         save(article) {
@@ -34,8 +33,9 @@ export default {
                 .catch((err) => {
 
                     if(err.message && err.validation.keys.length){
-                        this.errors['title'] = new FormError(err.validation.keys[0], err.message);
-                        console.log(this.errors);
+                        let error = new FormError(err.validation.keys[0], err.message);
+                        this.$set(this.errors, error.field, error);
+
                     } else {
                         console.error(err);
                     }

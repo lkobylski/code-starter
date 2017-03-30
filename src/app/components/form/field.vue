@@ -26,9 +26,6 @@
         },
 
         methods: {
-            hasError () {
-                console.log('Mam błąd');
-            }
         },
 
         created () {

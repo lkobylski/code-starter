@@ -1,6 +1,7 @@
 
 import authService from './../../../services/auth';
 import FormError from '../../../components/form/FormError';
+import formErrors from './../../../mixins/formErrors';
 
 export default {
 
@@ -13,19 +14,19 @@ export default {
             },
         };
     },
-
+    mixins: [
+        formErrors,
+    ],
     methods: {
         register(user) {
-            console.log('Login user');
-            console.log(user);
+            this.errors = {};
             authService.login(user)
                 .catch( (err) => {
 
-
                     if(err.message && err.validation.keys.length){
                         let error = new FormError(err.validation.keys[0], err.message);
-                        this.error = error;
-                        this.$emit('hasError');
+                        this.$set(this.errors, error.field, error);
+
                     } else {
                         console.error(err);
                     }

@@ -2,7 +2,7 @@
     <h1 class="title">Login</h1>
     <div>
         <v-form :model="user" @send="register" :error="error">
-            <div>
+            <form-field :error="getErrorFor('email')">
 
                 <div class="label">
                     <i class="fa fa-envelope fa-fw"></i> Email
@@ -17,8 +17,8 @@
                     >
                 </div>
 
-            </div>
-            <div class="field">
+            </form-field>
+            <form-field :error="getErrorFor('password')">
 
                 <div class="label">
                     <i class="fa fa-lock fa-fw"></i> Password
@@ -32,15 +32,15 @@
                     >
                 </p>
 
-            </div>
-            <div class="field">
+            </form-field>
+            <form-field>
                 <p class="control">
 
                     <button class="button is-primary">
                         Login
                     </button>
                 </p>
-            </div>
+            </form-field>
         </v-form>
         <div>
             Don't have account?
